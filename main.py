@@ -1,33 +1,31 @@
-# print("Welcome to the Band Name Generator")
-#
-# name = input("What is your name\n")
-# city = input("What is your city\n")
-# print(len(name))
-# print("Your brand name is " + name + " " + city)
-# print("Hello world\nHello World\nHello world")
-#
-#
-# # input will be executed first, followed by print statement
-# print("Hello " + input("Whats is your name"))
-print("Thank you for choosing Python Pizza Deliveries")
-size = input("What size did you want? S , M, or L\n")
-add_pepperoni= input("Did you want pepperoni? Y or N\n")
-extra_cheese= input("Did you want extra cheese? Y or N\n")
+name1 = input("What is your name?")
+name2 = input("What is there name?")
 
-bill = 0
-if size == "S":
-    bill += 15
-elif size == "M":
-    bill += 20
+combined_name = name1 + name2
+
+lower_name = combined_name.lower()
+
+t = lower_name.count("t")
+r = lower_name.count("r")
+u = lower_name.count("u")
+e = lower_name.count("e")
+
+first_digit = t + r + u + e
+
+l = lower_name.count("l")
+o = lower_name.count("o")
+v = lower_name.count("v")
+e = lower_name.count("e")
+
+second_digit = l + o + v + e
+
+score = int(str(first_digit) + str(second_digit))
+
+if (score < 10) or (score > 90):
+    print(f"Your score is {score}, you go together like coke and mentos.")
+
+elif(score >= 40) and (score <= 50):
+    print(f"Your score is {score}, you are alright together.")
+
 else:
-    bill += 25
-
-if add_pepperoni == "Y":
-    if size =="S":
-        bill +=2
-    else:
-        bill += 3
-if extra_cheese == "Y":
-    bill += 1
-
-print(f"Your final bill is {bill}")
+    print(f"Your score is {score}.")
